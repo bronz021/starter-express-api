@@ -1,7 +1,11 @@
-const express = require('express')
-const app = express()
-app.all('/', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
-app.listen(process.env.PORT || 3000)
+const express = require("express");
+const ejs = require("ejs");
+const port = 3000;
+const app = express();
+
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home" });
+});
+app.listen(port || preccess.ENV.PORT, () => {
+  console.log(`App is running on port ${port}`);
+});
